@@ -9,9 +9,20 @@
 //   );
 // };
 
+import * as React from "react";
 
-export let Input = (props) => {
+const Input = ({ className, type, ...props }, ref) => {
   return (
-    <input placeholder={props.ph} id={props.id} {...props} className="w-50 border-2 text-center rounded-sm h-10" />
+    <input
+      type={type}
+      className={`
+        "flex h-12 w-full rounded-md border border-zinc-300 border-input bg-transparent px-3 placeholder:text-xs",
+        ${className}`}
+      ref={ref}
+      {...props}
+    />
   );
 };
+Input.displayName = "Input";
+
+export { Input };

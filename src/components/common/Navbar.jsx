@@ -1,32 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "./Button";
+import { CgCommunity } from "react-icons/cg";
+import { RiAccountCircleLine } from "react-icons/ri";
+import { IoPeopleOutline } from "react-icons/io5";
+import { HiOutlineUserCircle } from "react-icons/hi2";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center py-5 shadow-lg shadow-gray-500 px-4">
-      <h2 className="font-bold text-3xl">swipecruit</h2>
+    <div className="flex flex-col items-center justify-center gap-12 w-40 h-screen fixed border-r border-zinc-200">
+      <div className="w-11/12 h-[90%] flex flex-col items-center gap-12">
+        <h2 className="font-black uppercase">swipecruit</h2>
 
-      <div>
-        <ul className="flex gap-3 font-bold text-2xl pl-3 space-x-4 md:space-x-6">
+        <div className="flex flex-col gap-7 w-10/12">
           <Link
             to={"/"}
-            className="hover:text-purple-600"
+            className="hover:text-rose-400 flex items-center gap-1"
           >
-            Home
+            <IoPeopleOutline className="text-xl" />
+            <p className="text-sm font-medium">Connect</p>
           </Link>
           <Link
-            to={"/login"}
-            className="hover:text-purple-600"
+            to={"/"}
+            className="hover:text-rose-400 flex items-center gap-1"
           >
-            Login
+            <HiOutlineUserCircle className="text-xl" />
+            <p className="text-sm font-medium">Profile</p>
           </Link>
-          <Link
-            to={"/signup"}
-            className="hover:text-purple-600"
-          >
-            SignUp
-          </Link>
-        </ul>
+          <Button className="border border-zinc-300 w-full">
+            <Link to={"/login"} className="">
+              Login
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
