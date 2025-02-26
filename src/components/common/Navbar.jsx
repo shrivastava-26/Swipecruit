@@ -13,20 +13,22 @@ const Navbar = () => {
         <h2 className="font-black uppercase">swipecruit</h2>
 
         <div className="flex flex-col gap-7 w-10/12">
+
           <Link
             to={"/"}
-            className="hover:text-rose-400 flex items-center gap-1"
-          >
+            className="hover:text-rose-400 flex items-center gap-1">
             <IoPeopleOutline className="text-xl" />
             <p className="text-sm font-medium">Connect</p>
           </Link>
+
           <Link
             to={"/"}
-            className="hover:text-rose-400 flex items-center gap-1"
-          >
+            className="hover:text-rose-400 flex items-center gap-1">
             <HiOutlineUserCircle className="text-xl" />
             <p className="text-sm font-medium">Profile</p>
           </Link>
+
+          {/* it will conditionally rendered according to isLogged in or any state */}
           <Button className="border border-zinc-300 w-full">
             <Link to={"/login"} className="">
               Login

@@ -14,7 +14,7 @@ let Login = () => {
     localStorage.setItem("email", data.email); 
 
     //! navigating to home page 
-    navigate('/')
+    navigate("/create-profile");
   };
 
   return <AuthForm formType="login" onSubmit={handleLogin} />;

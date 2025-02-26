@@ -15,8 +15,6 @@ let Signup = () => {
   return <AuthForm formType="signup" onSubmit={handleSignup} />;
 
 
-  return <AuthForm formType="signup" />
-
 };
 
 export default Signup;

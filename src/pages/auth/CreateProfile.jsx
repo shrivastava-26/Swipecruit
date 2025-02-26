@@ -4,6 +4,7 @@ import { Input } from "../../components/common/Input";
 import { useForm } from "react-hook-form";
 import { Button } from "../../components/common/Button";
 import { IoCloseOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const FormField = ({
   label,
@@ -29,6 +30,7 @@ const FormField = ({
 const CreateProfile = () => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  let navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -37,8 +39,9 @@ const CreateProfile = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    // Handle the form submission logic here
+    console.log(data)
+    navigate("/dashboard")
+    
   };
 
   // Handle image change
@@ -69,7 +72,7 @@ const CreateProfile = () => {
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex items-center justify-center w-11/12 h-full">
-        <div className="bg-white w-3/4 h-5/6 border border-zinc-100 shadow rounded-md p-6 flex justify-between">
+        <div className="bg-white w-3/4 h-11/12 border border-zinc-100 shadow rounded-md p-6 flex justify-between">
           <div className="w-1/3 h-fit">
             <div className="w-full flex flex-col gap-4 h-full">
               <div className="flex flex-col w-full gap-1">
@@ -114,10 +117,10 @@ const CreateProfile = () => {
               </div>
             </div>
           </div>
-          <div className="w-2/3 flex flex-col items-center justify-center gap-8">
+          <div className="w-2/3 flex flex-col items-center justify-center gap-2">
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="w-11/12 flex flex-col gap-10"
+              className="w-11/12 flex flex-col gap-4"
             >
               {/* Skills Section */}
               <div className="flex flex-col gap-6">
@@ -208,6 +211,7 @@ const CreateProfile = () => {
                   Create
                 </Button>
               </div>
+
             </form>
           </div>
         </div>
