@@ -145,11 +145,7 @@ const Dashboard = () => {
             <p className="text-gray-500 text-lg animate-pulse">Loading candidates...</p>
           )}
         </div>
-
-
-
-
-
+        
         <div
           className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-center cursor-pointer hover:bg-pink-100 transition"
           onClick={handleNext}
