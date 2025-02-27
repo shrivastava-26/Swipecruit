@@ -23,7 +23,7 @@ const Home = () => {
 
       <div
         className="flex-grow flex items-center justify-center"
-        style={{ backgroundImage: "url('/path-to-your-background-image.jpg')" }}
+        
       >
         <div className="bg-white bg-opacity-90 p-8 rounded-lg text-center">
           <h1 className="text-4xl font-bold mb-4">Find Your Match</h1>
