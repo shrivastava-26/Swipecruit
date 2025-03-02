@@ -3,7 +3,6 @@
 =======
 <<<<<<< HEAD
 # 🚀 Swipecruit
->>>>>>> 72f38d2 (second commit)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
