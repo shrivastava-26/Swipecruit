@@ -11,3 +11,5 @@ routes.put('/updateuser/:uid', updateUser)
 routes.delete('/deleteuser/:uid', deleteUser)
 
 module.exports = routes
+
+
