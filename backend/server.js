@@ -31,8 +31,8 @@ let dbStart = async() => {
         await connectToDb()
         console.log("db connceted successfully")
 
-        app.listen(process.env.PORT || 8080, () => {
-          console.log(`Server is started on port: ${process.env.PORT || 8080}`);
+        app.listen(process.env.PORT, () => {
+          console.log(`Server is started on port: ${process.env.PORT}`);
         });
         
     } catch (error) {
