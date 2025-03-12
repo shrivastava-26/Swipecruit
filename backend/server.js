@@ -3,6 +3,8 @@ let connectToDb = require('./config/connectToDb')
 let routes = require('./routes/user.routes')
 require('dotenv').config()
 
+let port = process.env.PORT || 8080
+
 let app = express()
 
 app.use(express.json())
@@ -31,8 +33,8 @@ let dbStart = async() => {
         await connectToDb()
         console.log("db connceted successfully")
 
-        app.listen(process.env.PORT || 8080, () => {
-          console.log(`Server is started on port: ${process.env.PORT || 8080}`);
+        app.listen(port, () => {
+          console.log(`Server is started on port: ${port}`);
         });
         
     } catch (error) {
