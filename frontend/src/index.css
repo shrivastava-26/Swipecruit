@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+.box-style {
+    @apply flex items-center justify-center text-white text-lg font-semibold rounded-lg shadow-lg transition-all duration-300;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .box-style {
+        font-size: 14px;
+    }
+}
+
+/* ! toast container */
+
+.toast-container {
+  background-color: #1f2937 !important; 
+  color: white !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  padding: 1rem !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 50px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.toast-success {
+  background-color: #16a34a !important; 
+}
+
+.toast-error {
+  background-color: #dc2626 !important; 
+}
+
+.toast-warning {
+  background-color: #facc15 !important; 
+  color: black !important;
+}
+
+
