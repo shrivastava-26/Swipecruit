@@ -1,5 +1,11 @@
 let {model,Schema} = require("mongoose")
 
+//file
+//eduction object
+//compny object
+//request array
+//matches array
+
 
 let userSchema = new Schema(
   {
@@ -25,6 +31,12 @@ let userSchema = new Schema(
       minlength: 8,
       maxlength: 16,
     },
+    otp:{
+      required:true,
+      default:"000000",
+      type:String
+
+    }
   },
   { timestamps: true }
 );

@@ -2,15 +2,21 @@ let User = require("../models/user.model");
 
 let addUser = async (req, res, next) => {
   try {
-    let { name, username, email, password } = req.body;
-    let isUser = await User.findOne({email});
+    let { name, username, email, password, confirmPassword } = req.body;
+
+    let isUser = await User.findOne({ $or: [{ username }, { email }] });
 
     if (isUser) {
       return res
         .status(409)
-        .json({ error: true, message: "user already exists" });
+        .json({ error: true, message: "User already exists" });
     }
 
+    if (password != confirmPassword) {
+      return res
+        .status(400)
+        .json({ error: true, message: "Enter valid username or password" });
+    }
     let saveUser = await User.create({ name, username, email, password });
     return res.status(201).json({
       error: false,
@@ -88,7 +94,7 @@ let deleteUser = async (req, res, next) => {
       data: deletedUser,
     });
   } catch (error) {
-    next(error);
+    next(error); 
   }
 };
 
