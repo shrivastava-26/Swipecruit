@@ -5,7 +5,7 @@ let { verifyController,userLogin } = require("../controller/authController");
 let routes = express.Router()
 
 
-routes.post("/adduser", addUser);
+routes.post("/adduser", addUser); 
 routes.get('/getuser', fetchUser)
 routes.get('/getoneuser/:uid', fetchOneUser)
 routes.put('/updateuser/:uid', updateUser)
