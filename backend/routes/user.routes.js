@@ -1,11 +1,14 @@
 let express = require('express')
 let {addUser,fetchOneUser,fetchUser,updateUser,deleteUser} = require('../controller/userController')
 let { verifyController,userLogin } = require("../controller/authController");
+const fileUpload = require('../utils/fileUpload');
 
 let routes = express.Router()
 
+let upload = fileUpload()
 
-routes.post("/adduser", addUser); 
+
+routes.post("/adduser", upload.single('profile'),addUser); 
 routes.get('/getuser', fetchUser)
 routes.get('/getoneuser/:uid', fetchOneUser)
 routes.put('/updateuser/:uid', updateUser)

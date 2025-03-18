@@ -6,7 +6,7 @@ require('dotenv').config()
 let port = process.env.PORT || 8080
 
 let app = express()
-
+app.use(express.static('./public/images'))
 app.use(express.json())
 
 app.use('/api/user', routes)
