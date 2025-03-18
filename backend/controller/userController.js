@@ -1,8 +1,16 @@
 let User = require("../models/user.model");
+require("dotenv").config();
 
 let addUser = async (req, res, next) => {
   try {
     let { name, username, email, password, confirmPassword } = req.body;
+
+    if(!req.file){
+      return res.status(400).json({error:true, message:"profile picture is required"})
+    }
+
+    let mediaFile = req.file?.profile
+let profile = `${process.env.BASE_URL}${mediaFile}`;
 
     let isUser = await User.findOne({ $or: [{ username }, { email }] });
 
@@ -17,7 +25,7 @@ let addUser = async (req, res, next) => {
         .status(400)
         .json({ error: true, message: "Enter valid username or password" });
     }
-    let saveUser = await User.create({ name, username, email, password });
+    let saveUser = await User.create({ name, username, email, password, profile });
     return res.status(201).json({
       error: false,
       message: "user added successfully",

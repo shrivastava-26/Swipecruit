@@ -16,7 +16,6 @@ let SignUp = lazy(() => import("./pages/auth/SignUp"));
 let Login = lazy(() => import("./pages/auth/Login"));
 
 
-
 let AppLayout = () => {
   let location = useLocation();
   let path = location.pathname;

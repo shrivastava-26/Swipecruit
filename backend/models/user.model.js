@@ -13,6 +13,10 @@ let userSchema = new Schema(
       type: String,
       required: true,
     },
+    profile:{
+      type:String,
+      required:true,
+    },
     username: {
       type: String,
       required: true,
@@ -35,7 +39,6 @@ let userSchema = new Schema(
       required:true,
       default:"000000",
       type:String
-
     }
   },
   { timestamps: true }
