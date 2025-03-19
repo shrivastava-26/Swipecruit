@@ -3,9 +3,19 @@ let connectToDb = require('./config/connectToDb')
 let routes = require('./routes/user.routes')
 require('dotenv').config()
 
+const cors = require("cors");
+let app = express();
+
+app.use(
+  cors({
+    origin: "https://swipecruit.vercel.app",
+    credentials: true,
+  })
+);
+
+
 let port = process.env.PORT || 8080
 
-let app = express()
 app.use(express.static('./public/images'))
 app.use(express.json())
 

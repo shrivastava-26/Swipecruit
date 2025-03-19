@@ -6,7 +6,6 @@ let {model,Schema} = require("mongoose")
 //request array
 //matches array
 
-
 let userSchema = new Schema(
   {
     name: {
