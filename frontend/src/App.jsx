@@ -14,7 +14,7 @@ let CreateProfile = lazy(() => import("./pages/profile/CreateProfile"));
 let Dashboard = lazy(() => import("./pages/utils/Dashboard"));
 let SignUp = lazy(() => import("./pages/auth/SignUp"));
 let Login = lazy(() => import("./pages/auth/Login"));
-
+let Chat = lazy(()=> import("./pages/chat/Chat"))
 
 let AppLayout = () => {
   let location = useLocation();
@@ -29,9 +29,6 @@ let AppLayout = () => {
         position="top-center"
         autoClose={500}
         hideProgressBar={false}
-        closeOnClick
-        pauseOnHover
-        draggable
         toastClassName="toast-container"
         bodyClassName="text-sm font-semibold"
       />
@@ -49,6 +46,7 @@ let appRouter = createBrowserRouter([
       { path: "/create-profile", element: <CreateProfile /> },
       { path: "/dashboard", element: <Dashboard /> },
       { path: "/", element: <Home /> },
+      {path:'/chat', element:<Chat/>}
     ],
   },
 ]);
